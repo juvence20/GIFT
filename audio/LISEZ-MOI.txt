@@ -1,0 +1,26 @@
+À PROPOS DE LA MUSIQUE DE FOND
+────────────────────────────────────────────────────────────
+
+Le site est déjà prêt à jouer une musique de fond automatiquement
+dès qu'elle clique sur le cadeau (avec un bouton 🔈 en haut à
+gauche pour couper/activer le son à tout moment).
+
+⚠️ Je n'ai pas pu inclure "Bye (Altare Remix) – Ariana Grande" :
+c'est une musique protégée par des droits d'auteur, donc je ne
+peux ni la fournir, ni la télécharger pour toi.
+
+Pour l'ajouter toi-même :
+  1. Procure-toi le morceau légalement (achat sur une plateforme,
+     ou une musique libre de droits si tu préfères éviter tout
+     souci de droits d'auteur pour un envoi privé).
+  2. Renomme le fichier exactement :  background-music.mp3
+  3. Dépose-le dans ce dossier (assets/audio/), à la place de
+     ce fichier texte.
+
+Le site le détectera automatiquement — aucune ligne de code à
+modifier. Si aucun fichier n'est présent, le site fonctionne
+simplement sans musique, sans erreur.
+
+Astuce : des sites comme Uppbeat, Pixabay Music ou Bensound
+proposent des musiques douces et romantiques totalement gratuites
+pour un usage personnel comme celui-ci.
