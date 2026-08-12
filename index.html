@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Juste pour toi</title>
+<meta name="theme-color" content="#eaf2fb">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Bouton son (visible dès la 1ère interaction) -->
+  <button class="sound-toggle" id="soundToggle" aria-label="Couper / activer le son">🔈</button>
+  <audio id="bgMusic" loop preload="none">
+    <source src="audio/background-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ===================== VUE 1 : COUVERTURE ===================== -->
+  <section class="view view--active" id="view-cover">
+    <div class="floaties" aria-hidden="true">
+      <span class="floaty">💙</span>
+      <span class="floaty">❄</span>
+      <span class="floaty">💙</span>
+      <span class="floaty">❄</span>
+      <span class="floaty">💙</span>
+    </div>
+
+    <div class="cover-content">
+      <button class="giftbox" id="giftbox" aria-label="Ouvrir le cadeau">
+        <svg viewBox="0 0 220 200" class="giftbox-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g class="giftbox-lid">
+            <rect x="20" y="55" width="180" height="34" rx="4" class="box-lid" />
+            <path d="M110 55 C 90 10, 40 8, 35 34 C 32 52, 70 55, 110 55 Z" class="box-bow"/>
+            <path d="M110 55 C 130 10, 180 8, 185 34 C 188 52, 150 55, 110 55 Z" class="box-bow"/>
+            <circle cx="110" cy="53" r="9" class="box-knot"/>
+          </g>
+          <rect x="30" y="89" width="160" height="100" rx="6" class="box-base"/>
+          <rect x="100" y="89" width="20" height="100" class="box-ribbon-v"/>
+          <rect x="30" y="130" width="160" height="18" class="box-ribbon-h"/>
+        </svg>
+        <span class="giftbox-glow"></span>
+      </button>
+
+      <h1 class="script-heading cover-title" id="coverTitle">Juste pour toi, ma p'tite princesse.</h1>
+      <p class="tap-hint">(Azy appuie pour ouvrir)</p>
+    </div>
+  </section>
+
+  <!-- ===================== TRANSITION : PLUIE DE ROSES ===================== -->
+  <div class="rose-transition" id="roseTransition" aria-hidden="true"></div>
+
+  <!-- ===================== VUE 2 : MESSAGE ===================== -->
+  <section class="view" id="view-message">
+    <div class="rose-border rose-border--left" id="roseBorderLeft" aria-hidden="true"></div>
+    <div class="rose-border rose-border--right" id="roseBorderRight" aria-hidden="true"></div>
+
+    <div class="corner-bouquet" aria-hidden="true" id="cornerBouquet"></div>
+
+    <div class="scroll-content">
+      <div class="message-inner">
+        <h2 class="script-heading">Un petit cadeau.</h2>
+        <p class="subtitle">Pour te montrer mes sentiments avec mes codes.</p>
+
+        <div class="couple-scene" aria-hidden="true">
+          
+          <img src="photos/C.png" alt="c">
+        </div>
+
+        <div class="divider" aria-hidden="true">
+          <span>✦</span><span class="divider-heart">♡</span><span>✦</span>
+        </div>
+
+        <p class="intro-text" id="introText"></p>
+
+        <div class="quote-card" id="quoteCard"></div>
+
+        <div class="unlock-cta" id="openLockBtn">
+          <span class="lock-icon-wrap">
+            <svg viewBox="0 0 64 64" class="heart-lock-svg" aria-hidden="true">
+              <path class="hl-shackle" d="M23 26 V19 C23 11 27 6 32 6 C37 6 41 11 41 19 V26" fill="none"/>
+              <path class="hl-heart" d="M32 52 C14 40 8 29 8 20 C8 12 14 7 20 7 C25 7 29 10 32 15 C35 10 39 7 44 7 C50 7 56 12 56 20 C56 29 50 40 32 52 Z"/>
+              <circle class="hl-key" cx="32" cy="24" r="3.4"/>
+              <rect class="hl-key" x="30.6" y="24" width="2.8" height="7" rx="1.2"/>
+            </svg>
+          </span>
+          <p class="unlock-text">Azy appuies dessus</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VUE 3 : CODE SECRET ===================== -->
+  <section class="view" id="view-passkey">
+    <button class="close-btn" id="closePasskeyBtn" aria-label="Fermer">×</button>
+    <div class="passkey-content">
+      <span class="lock-icon-wrap lock-icon-wrap--big">
+        <svg viewBox="0 0 64 64" class="heart-lock-svg" aria-hidden="true">
+          <path class="hl-shackle" d="M23 26 V19 C23 11 27 6 32 6 C37 6 41 11 41 19 V26" fill="none"/>
+          <path class="hl-heart" d="M32 52 C14 40 8 29 8 20 C8 12 14 7 20 7 C25 7 29 10 32 15 C35 10 39 7 44 7 C50 7 56 12 56 20 C56 29 50 40 32 52 Z"/>
+          <circle class="hl-key" cx="32" cy="24" r="3.4"/>
+          <rect class="hl-key" x="30.6" y="24" width="2.8" height="7" rx="1.2"/>
+        </svg>
+      </span>
+      <h2 class="script-heading">Entre le code secret</h2>
+      <p class="hint" id="passkeyHint">Indice : Mon année de naissance 🥷🏽</p>
+
+      <div class="dots" id="passkeyDots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <p class="error-msg" id="passkeyError">Ce n'est pas ça... réessaie 🥺</p>
+
+      <div class="keypad" id="keypad">
+        <button data-key="1">1</button>
+        <button data-key="2">2</button>
+        <button data-key="3">3</button>
+        <button data-key="4">4</button>
+        <button data-key="5">5</button>
+        <button data-key="6">6</button>
+        <button data-key="7">7</button>
+        <button data-key="8">8</button>
+        <button data-key="9">9</button>
+        <button data-key="clear" class="key-text">Effacer</button>
+        <button data-key="0">0</button>
+        <button data-key="back" class="key-text">←</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHARGEMENT ===================== -->
+  <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+    <div class="wreath" id="wreath" aria-hidden="true"></div>
+    <p class="loading-text">Chargement</p>
+  </div>
+
+  <!-- ===================== DÉBLOQUÉ ===================== -->
+  <div class="unlocked-overlay" id="unlockedOverlay" aria-hidden="true">
+    <p class="unlocked-text"><span class="unlocked-check">✓</span> Débloqué</p>
+  </div>
+
+  <!-- ===================== VUE 4 : GALERIE + LETTRE ===================== -->
+  <section class="view" id="view-gallery">
+    <button class="back-btn" id="backBtn">‹ Retour</button>
+    <div class="scroll-content gallery-scroll">
+      <h2 class="script-heading gallery-title">Ta petite frimousse.</h2>
+      <div class="polaroid-grid" id="polaroidGrid"></div>
+
+      <div class="letter-card" id="letterCard">
+        <p class="letter-text" id="letterText"></p>
+        <span class="letter-cursor" id="letterCursor">|</span>
+        <div class="letter-heart">♡</div>
+      </div>
+
+      <div class="the-end">
+        <span>— fin —</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+╔══════════════════════════════════════════════════════════╗
+║           POUR TOI — Guide de personnalisation            ║
+╚══════════════════════════════════════════════════════════╝
+
+MERCI d'utiliser ce petit site 💙 Voici comment le rendre
+100% à toi, sans avoir besoin de savoir coder.
+
+────────────────────────────────────────────────────────────
+1. AJOUTER VOS PHOTOS
+────────────────────────────────────────────────────────────
+Ouvre le dossier :  assets/photos/
+
+Tu y trouveras 8 images de remplacement (photo1.jpg à
+photo8.jpg). Remplace-les simplement par vos vraies photos,
+EN GARDANT EXACTEMENT LE MÊME NOM DE FICHIER
+(ex: renomme votre photo en "photo1.jpg" puis glisse-la dans
+le dossier pour écraser l'ancienne).
+
+Tu veux plus ou moins de photos ? Ouvre js/config.js et
+ajoute/supprime une ligne dans la liste "photos: [ ... ]".
+
+────────────────────────────────────────────────────────────
+2. MODIFIER LES TEXTES, LE PRÉNOM ET LE CODE SECRET
+────────────────────────────────────────────────────────────
+Tout se passe dans le fichier :  js/config.js
+
+Ouvre-le avec le Bloc-notes (ou n'importe quel éditeur de
+texte) et modifie les valeurs entre guillemets " " :
+
+  - girlfriendName   → son prénom (ex: "Léa")
+  - yourName         → ta signature à la fin de la lettre
+  - passkey           → le code à 4 chiffres du cadenas
+                         (actuellement : 2004)
+  - passkeyHint       → l'indice affiché au-dessus du clavier
+  - introText         → le petit texte sous "De moi à toi."
+  - quoteText         → la petite carte-citation avec mots surlignés
+                         (entoure un mot de **ainsi** pour le surligner)
+  - letterText        → la lettre d'amour complète
+
+Le texte de la lettre est un premier brouillon romantique —
+n'hésite pas à le réécrire avec tes propres mots, ce sera
+encore plus fort venant vraiment de toi. Pour sauter une
+ligne dans la lettre, tape \n\n à l'endroit voulu.
+
+────────────────────────────────────────────────────────────
+3. MUSIQUE DE FOND (optionnel)
+────────────────────────────────────────────────────────────
+Regarde le fichier assets/audio/LISEZ-MOI.txt : je n'ai pas pu
+inclure "Bye (Altare Remix)" d'Ariana Grande car elle est
+protégée par des droits d'auteur, mais le site est déjà câblé
+pour jouer automatiquement n'importe quel fichier mp3 que tu
+déposes dans ce dossier (nommé "background-music.mp3"). Un
+bouton 🔈 en haut à gauche permet de couper le son à tout moment.
+
+────────────────────────────────────────────────────────────
+4. TESTER LE SITE
+────────────────────────────────────────────────────────────
+Double-clique simplement sur le fichier "index.html" :
+il s'ouvrira dans ton navigateur (Chrome, Safari...) et tu
+pourras tester tout le parcours avant de l'envoyer.
+
+────────────────────────────────────────────────────────────
+5. ENVOYER LE SITE À TA COPINE
+────────────────────────────────────────────────────────────
+Pour qu'elle puisse le voir sur son téléphone, la solution la
+plus simple est de l'héberger gratuitement en 1 minute :
+
+  → Va sur netlify.com (ou pages.dev / Cloudflare Pages)
+  → Crée un compte gratuit
+  → Glisse-dépose TOUT LE DOSSIER "love-website" sur la page
+    d'accueil ("Add new site" > "Deploy manually")
+  → Tu obtiens un lien du type https://xxxx.netlify.app
+  → Envoie ce lien à ta copine, elle l'ouvre sur son téléphone
+
+────────────────────────────────────────────────────────────
+STRUCTURE DES FICHIERS
+────────────────────────────────────────────────────────────
+love-website/
+├── index.html          → structure de la page (HTML)
+├── css/style.css        → toute l'apparence (couleurs, mise en page)
+├── js/config.js         → TES INFOS À MODIFIER (textes, photos, code)
+├── js/script.js         → la logique du site (pas besoin d'y toucher)
+└── assets/photos/       → tes photos à déposer ici
+
+Bonne surprise ! 💙
